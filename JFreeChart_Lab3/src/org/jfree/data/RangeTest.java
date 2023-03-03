@@ -34,6 +34,10 @@ public class RangeTest {
 
 	//Testing method Range(double lower, double upper)
 	
+	
+	/*
+	 * Testing to confirm that upper bound < lower bound throws exception
+	 */
 	@Test (expected = IllegalArgumentException.class)
 	public void RangeConstructorForInvalidRange() {
 		Range r1 = new Range(10,0);
@@ -41,6 +45,9 @@ public class RangeTest {
 	
 	//Testing method getCentralValue()
 	
+	/*
+	 * getCentralValue should return the correct value for a given range
+	 */
 	@Test 
 	public void CentralValueIsCorrect() {
 		assertEquals("The central value should be 0",0,range1.getCentralValue(),0.000000001d);
@@ -67,6 +74,10 @@ public class RangeTest {
     }
 	
 	// Testing method combine(Range range1, Range range2)
+	
+	/*
+	 *  Testing to confirm that two overlapping ranges are merged correctly
+	 */
 	@Test
     public void CombineSeparatedRanges() throws Exception{
 		Range r1 = new Range(0, 1);
@@ -76,6 +87,9 @@ public class RangeTest {
     	assertEquals("The combined range should be 0, 4", result, expected);
     }
 	
+	/*
+	 *  Testing to confirm that ranges whos boundaries touch are merged correctly
+	 */
 	@Test
     public void CombineAdjacentRanges() throws Exception{
 		Range r1 = new Range(0, 1);
@@ -85,16 +99,25 @@ public class RangeTest {
     	assertEquals("The combined range should be 0, 2", result, expected);
     }
 	
+	/*
+	 * Testing to confirm that range1 is returned when a null range 2 is used
+	 */
     @Test
     public void CombinedRangeShouldBeRange1() throws Exception{
     	assertEquals("The combined range should be -1,1",range1,Range.combine(range1,null));
     }
     
+	/*
+	 * Testing to confirm that range2 is returned when a null range 1 is used
+	 */
     @Test
     public void CombinedRangeShouldBeRange2() throws Exception{
     	assertEquals("The combined range should be 1,2",range2,Range.combine(null,range2));
     }
     
+    /*
+     * Testing to confirm that null is returned for two null arguments
+     */
     @Test
     public void CombinedRangeShouldBeNull() throws Exception{
     	assertNull("The combined range should be null", Range.combine(null, null));
@@ -102,37 +125,60 @@ public class RangeTest {
     
     // Testing method combineIgnoringNaN(Range range1, Range range2)
     
+	/*
+	 * Testing to confirm that range2 is returned when a null range 1 is used 
+	 */
     @Test
     public void CombinedNaNRangeShouldBeRange2() {
     	assertEquals(range2,Range.combineIgnoringNaN(null,range2));
     }
     
+    /*
+     * Testing to confirm that null is returned for two null arguments
+     */
     @Test
     public void CombinedNaNRangeShouldBeNull2() {
-    	assertNull(Range.combineIgnoringNaN(null,NaNrange));
+    	assertNull(Range.combineIgnoringNaN(null,null));
     }
     
+	/*
+	 * Testing to confirm that range1 is returned when a null range1 and NaN range1 is used
+	 */
     @Test
     public void CombinedNaNRangeShouldBeRange1() {
     	assertEquals(range2,Range.combineIgnoringNaN(range1,null));
     }
     
+    /*
+     * Testing to confirm null is returned when null and NaN range are used
+     */
     @Test
     public void CombinedNaNRangeShouldBeNull1() {
     	assertNull(Range.combineIgnoringNaN(NaNrange,null));
     }
-    
+   
+    /*
+     * Testing to confirm that null is returned for two NaN range objects
+     */
     @Test
     public void CombinedRangeShouldBeNullTwoNaN() {
     	assertNull(Range.combineIgnoringNaN(NaNrange, NaNrange));
     }
     
+    
+    /*
+     *  Testing to confirm that combineIgnoringNaN returns the correct range for two valid inputs
+     */
     @Test
     public void CombinedRangeIsValid() {
     	assertEquals(range4,Range.combineIgnoringNaN(range2,range3));
     }
     
     // Testing method expandToInclude(Range range, double value)
+    
+    /*
+     *  Checking expandToInclude returns the correct result for standard range and double inputs
+     */
     @Test
     public void ExpandToIncludeUpperBoundShouldBe2() {
     	Range newRange = Range.expandToInclude(range1, 2);
@@ -147,6 +193,10 @@ public class RangeTest {
     	assertEquals(1,newRange.getUpperBound(),0.000000001d);
     }
     
+    
+    /*
+     * Checking that new range is properly constructed when expanding a null range object
+     */
     @Test
     public void ExpandToIncludeNullShouldBeValue() {
     	Range testRange = new Range(1,1);
@@ -154,12 +204,19 @@ public class RangeTest {
     	assertEquals(testRange,newRange);
     }
     
+    /*
+     *  Checking that range expansion of 0 returns a new range equivalent to the original
+     */
     @Test
     public void ExpandToIncludeMiddleOfRangeShouldBeTheSame() {
     	assertEquals(range1,Range.expandToInclude(range1, 0));
     }
     
     // Testing method constrain(double value)
+    
+    /*
+     * 
+     */
     @Test
     public void ConstrainReturnValueShouldBeLowerBound() throws Exception {
     	double constrainValue = range1.constrain(-5);
