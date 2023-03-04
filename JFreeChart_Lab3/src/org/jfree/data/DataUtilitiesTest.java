@@ -342,7 +342,7 @@ public class DataUtilitiesTest extends DataUtilities {
 		};
 		double[] expected = {0.3125, 0.875, 1.0};
 		
-		assertTrue("results should equal expected.\nresults: "+Arrays.toString(results)+"\nexpected: "+Arrays.toString(expected), Array.equals(expected, results));
+		assertTrue("results should equal expected.\nresults: "+Arrays.toString(results)+"\nexpected: "+Arrays.toString(expected), expected.equals(results));
 	}
 	
 	@Test
@@ -391,7 +391,7 @@ public class DataUtilitiesTest extends DataUtilities {
 		};
 		double[] expected = {0.3125, 0.875, 1.0};
 		
-		assertTrue("results should equal expected.\nresults: "+Arrays.toString(results)+"\nexpected: "+Arrays.toString(expected), Array.equals(expected, results));
+		assertTrue("results should equal expected.\nresults: "+Arrays.toString(results)+"\nexpected: "+Arrays.toString(expected), expected.equals(results));
 	}
 	
 	@Test
@@ -433,7 +433,7 @@ public class DataUtilitiesTest extends DataUtilities {
 		};
 		double[] expected = {5/14, 1.0};
 		
-		assertTrue("results should equal expected.\nresults: "+Arrays.toString(results)+"\nexpected: "+Arrays.toString(expected), Array.equals(expected, results));
+		assertTrue("results should equal expected.\nresults: "+Arrays.toString(results)+"\nexpected: "+Arrays.toString(expected), expected.equals(results));
 	}
 	
 	@Test
@@ -486,7 +486,7 @@ public class DataUtilitiesTest extends DataUtilities {
 		};
 		double[] expected = {0.3125, 0.875, 1.0, 1.0, 1.0};
 		
-		assertTrue("results should equal expected.\nresults: "+Arrays.toString(results)+"\nexpected: "+Arrays.toString(expected), Array.equals(expected, results));
+		assertTrue("results should equal expected.\nresults: "+Arrays.toString(results)+"\nexpected: "+Arrays.toString(expected), expected.equals(results));
 	}
 	
 	@Test
@@ -526,7 +526,7 @@ public class DataUtilitiesTest extends DataUtilities {
 		};
 		double[] expected = {0.5, 1.0};
 		
-		assertTrue("results should equal expected.\nresults: "+Arrays.toString(results)+"\nexpected: "+Arrays.toString(expected), Array.equals(expected, results));
+		assertTrue("results should equal expected.\nresults: "+Arrays.toString(results)+"\nexpected: "+Arrays.toString(expected), expected.equals(results));
 	}
 	
 	@Test (expected = InvalidParameterException.class)
