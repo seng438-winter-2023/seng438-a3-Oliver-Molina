@@ -342,7 +342,7 @@ public class DataUtilitiesTest extends DataUtilities {
 		};
 		double[] expected = {0.3125, 0.875, 1.0};
 		
-		assertTrue("results should equal expected.\nresults: "+Arrays.toString(results)+"\nexpected: "+Arrays.toString(expected), expected.equals(results));
+		assertTrue("results should equal expected.\nresults: "+Arrays.toString(results)+"\nexpected: "+Arrays.toString(expected), Arrays.equals(expected, results));
 	}
 	
 	@Test
@@ -391,7 +391,7 @@ public class DataUtilitiesTest extends DataUtilities {
 		};
 		double[] expected = {0.3125, 0.875, 1.0};
 		
-		assertTrue("results should equal expected.\nresults: "+Arrays.toString(results)+"\nexpected: "+Arrays.toString(expected), expected.equals(results));
+		assertTrue("results should equal expected.\nresults: "+Arrays.toString(results)+"\nexpected: "+Arrays.toString(expected), Arrays.equals(expected, results));
 	}
 	
 	@Test
@@ -433,7 +433,7 @@ public class DataUtilitiesTest extends DataUtilities {
 		};
 		double[] expected = {5/14, 1.0};
 		
-		assertTrue("results should equal expected.\nresults: "+Arrays.toString(results)+"\nexpected: "+Arrays.toString(expected), expected.equals(results));
+		assertTrue("results should equal expected.\nresults: "+Arrays.toString(results)+"\nexpected: "+Arrays.toString(expected), Arrays.equals(expected, results));
 	}
 	
 	@Test
@@ -486,7 +486,7 @@ public class DataUtilitiesTest extends DataUtilities {
 		};
 		double[] expected = {0.3125, 0.875, 1.0, 1.0, 1.0};
 		
-		assertTrue("results should equal expected.\nresults: "+Arrays.toString(results)+"\nexpected: "+Arrays.toString(expected), expected.equals(results));
+		assertTrue("results should equal expected.\nresults: "+Arrays.toString(results)+"\nexpected: "+Arrays.toString(expected), Arrays.equals(expected, results));
 	}
 	
 	@Test
@@ -526,7 +526,7 @@ public class DataUtilitiesTest extends DataUtilities {
 		};
 		double[] expected = {0.5, 1.0};
 		
-		assertTrue("results should equal expected.\nresults: "+Arrays.toString(results)+"\nexpected: "+Arrays.toString(expected), expected.equals(results));
+		assertTrue("results should equal expected.\nresults: "+Arrays.toString(results)+"\nexpected: "+Arrays.toString(expected), Arrays.equals(expected, results));
 	}
 	
 	@Test (expected = InvalidParameterException.class)
@@ -723,7 +723,7 @@ public class DataUtilitiesTest extends DataUtilities {
 		};
 		double[] expected = {5/14, 1.0};
 		
-		assertTrue("results should equal expected?.\nresults: "+Arrays.toString(results)+"\nexpected: "+Arrays.toString(expected), expected.equals(results));
+		assertTrue("results should equal expected?.\nresults: "+Arrays.toString(results)+"\nexpected: "+Arrays.toString(expected), Arrays.equals(expected, results));
 	}
 	
 	// we can explain the last 3 as "testing what happens with invalid row/col/item counts" or some bs

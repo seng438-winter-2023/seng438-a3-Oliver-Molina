@@ -284,12 +284,12 @@ public class RangeTest {
     
     @Test 
     public void ContainsLowerBound() throws Exception {
-    	assertTrue("Contains should return false for argument 1 on range3", range3.contains(1));
+    	assertTrue("Contains should return true for argument 1 on range3", range3.contains(1));
     }
     
     @Test
     public void ContainsUpperBound() throws Exception {
-    	assertTrue("Contains should return false for argument 10 on range3", range3.contains(10));
+    	assertTrue("Contains should return true for argument 10 on range3", range3.contains(10));
     }
     
     // Testing method equals(Object obj)
